@@ -31,11 +31,23 @@ OpenAPI panel with API documentation is at http://localhost:8080/docs
 
 ## Run Celery worker (with concurrency 4)
 ```
-cd worker && celery worker --app=worker.celery_worker -c 4 --loglevel=info
+cd worker && celery worker --app=celery_worker -c 4 --loglevel=info
+```
+
+or
+
+```
+celery worker --app=worker.celery_worker -c 4 --loglevel=info
 ```
 
 ## Run Flower service to monitor the queues
 ```
 cd worker && flower -A celery_app
+```
+
+or
+
+```
+flower -A worker.celery_app
 ```
 Flower panel is at http://localhost:5555
