@@ -4,6 +4,8 @@ Poetry is required to manage dependencies and Virtualenvs without creating a mes
 pip install poetry
 ```
 
+We also need redis as a message broker, so install redis. (Also RabbitMQ is supported)
+
 ## Install dependencies
 Install dependencies declared in pyproject.toml file
 ```
@@ -25,6 +27,7 @@ poetry shell
 ```
 uvicorn main:app --host 0.0.0.0 --port 8080
 ```
+OpenAPI panel with API documentation is at http://localhost:8080/docs
 
 ## Run Celery worker (with concurrency 4)
 ```
@@ -35,3 +38,4 @@ cd worker && celery worker --app=worker.celery_worker -c 4 --loglevel=info
 ```
 cd worker && flower -A celery_app
 ```
+Flower panel is at http://localhost:5555
