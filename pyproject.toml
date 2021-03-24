@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "test_fastapi_dramatiq"
+version = "0.1.0"
+description = ""
+authors = ["Riccardo Massullo <riccardo.massullo@msm.io>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+dramatiq = "^1.10.0"
+fastapi = "^0.60.1"
+uvicorn = "^0.11.6"
+redis = "^3.5.3"
+celery = "^4.4.6"
+flower = ""
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
